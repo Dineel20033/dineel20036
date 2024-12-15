@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="./Styles/buynowpharm.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1>Complete Your Purchase</h1>
+    </header>
+    <main>
+        <section id="order-summary">
+            <h2>Order Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="summary-items">
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+            <p id="order-total">Total: $0.00</p>
+        </section>
+        
+        
+
+        <!-- User Details Form -->
+        <section id="user-details">
+            <h2>Enter Your Details</h2>
+            <form id="purchase-form">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Delivery Details</legend>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                    <label for="postcode">Postcode:</label>
+                    <input type="text" id="postcode" name="postcode" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Payment Details</legend>
+                    <label for="payment-method">Payment Method:</label><br>
+                    <input type="radio" id="cash" name="payment-method" value="cash">
+                    <label for="cash">Cash</label><br>
+                    <input type="radio" id="card" name="payment-method" value="card" checked>
+                    <label for="card">Card</label><br>
+                    
+                    <div id="card-details">
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" maxlength="16">
+                        <label for="expiry-date">Expiry Date:</label>
+                        <input type="month" id="expiry-date" name="expiry-date">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" maxlength="3">
+                    </div>
+                    
+                </fieldset>
+                <button type="submit" id="pay-button">Pay</button>
+            </form>
+        </section>
+
+        <!-- Confirmation Message -->
+        <section id="confirmation" class="hidden">
+            <h2>Thank You for Your Purchase!</h2>
+            <p>Your order has been confirmed and will be delivered on <span id="delivery-date"></span>.</p>
+        </section>
+    </main>
+   
+    <script src="buy-now.js"></script>
+    
+</body>
+</html>
